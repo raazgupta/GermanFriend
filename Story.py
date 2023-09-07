@@ -72,12 +72,12 @@ def chooseSelectedWords():
                 elif reviewFrequency != "B":
                     reviewDateObject = datetime.strptime(reviewDateString, "%Y-%m-%d").date()
                     today = datetime.now().date()
-                    if reviewDateObject <= today:
+                    if reviewDateObject <= today and len(selected_words_lineNumber) < 10:
                         selected_words_lineNumber.append([word, lineNumber])
                 elif reviewFrequency == "B":
                     number_burned = number_burned + 1
 
-    # print("Number of selected words using reviewDate:", len(selected_words_lineNumber))
+    print("Number of selected words using reviewDate:", len(selected_words_lineNumber))
 
     # Check if selected_words has 10 orders or add random words to it
     num_selected_words = len(selected_words_lineNumber)
@@ -90,7 +90,7 @@ def chooseSelectedWords():
         for random_index in random_word_indices:
             selected_words_lineNumber.append(not_reviewed_words[random_index])
 
-    # print("Number of selected words after adding random:", len(selected_words_lineNumber))
+    print("Number of selected words after adding random:", len(selected_words_lineNumber))
 
     # Create a list of selected words
     selected_words = []
