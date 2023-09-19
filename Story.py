@@ -224,7 +224,7 @@ def save_to_csv(wortLines):
             csv_writer.writerow(row)
 
 
-# recreate_wortlist()
+#recreate_wortlist()
 wortLines, selected_words_lineNumber, selected_words, percentage_burned = chooseSelectedWords()
 messages = create_story(selected_words, temperature=percentage_burned)
 print(f"Percentage of words burned: {percentage_burned} \n")
